@@ -8,10 +8,12 @@
     <title>My Portfolio</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:700,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -19,40 +21,29 @@
     <div id="mobile-menu-open" class="shadow-large">
         <i class="fa fa-bars" aria-hidden="true"></i>
     </div>
-
     <header>
-        <div id="mobile-menu-close">
-            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
-        </div>
-        <ul id="menu" class="shadow">
-            <li>
-                <a href="#about">About</a>
-            </li>
-            <li>
-                <a href="#education">Education</a>
-            </li>
-            <li>
-                <a href="#projects">Projects</a>
-            </li>
-            <li>
-                <a href="#gallery">Gallery</a>
-            </li>
-            <li>
-                <a href="#workshops">Workshops & Summer Schools</a>
-            </li>
-            <li>
-                <a href="#skills">Skills</a>
-            </li>
-            <li>
-                <a href="#yoyo">Contact</a>
-            </li>
-            
-        </ul>
+        <nav id="main-nav">
+            <div id="mobile-menu-close">
+                <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+            </div>
+            <ul id="menu" class="shadow">
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#Experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#workshops">Workshops & Summer Schools</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#yoyo">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
     <div id="lead">
+        <div id="lead-overlay"></div>
         <div id="lead-content">
-            <h1 class ="temp" style="color: rgb(255, 255, 255);">Rajit Shrivastava</h1>
+            <h1 class="temp" id="main-title">Rajit Shrivastava</h1>
         </div>
 
         <!-- Video Background -->
@@ -70,6 +61,7 @@
 
     <!-- About Section -->
     <div id="about">
+        <div class="section-divider"></div>
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
@@ -87,7 +79,8 @@
     </div>
 
     <!-- Education Section -->
-    <div id="education">
+    <div id="education" class="background-alt">
+        <div class="section-divider"></div>
         <h2 class="heading">Education</h2>
         <div class="education-block">
             <h3>NATIONAL INSTITUTE OF TECHNOLOGY (MANIT), BHOPAL</h3>
@@ -114,59 +107,270 @@
         </div>
     </div>
 
-    <!-- Projects Section -->
-<div id="projects" class="background-alt">
-    <h2 class="heading">Projects</h2>
+ <!-- Experience Section (Merged & Collapsible Details) -->
+<div id="Experience" class="background-alt">
+    <div class="section-divider"></div>
+    <h2 class="heading text-center" style="text-align: center;">Experience</h2>
     <div class="container">
         <div class="row">
-            <!-- Description of the projects -->
-            <p>Currently working on exciting projects related to my interests in physics and astronomy. Check out the videos below!</p>
-
-            <!-- YouTube Video 1 -->
-            <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/Pi1XeAIFzLs" 
-                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                </iframe>
+            <!-- Experience 1 -->
+            <div class="col-md-6 project-block">
+                <div class="project-thumb">
+                    <img src="images/isro.png" alt="Winter Internship - Image Processing and Computed Tomography in NDE (ISRO)" style="width:100%;height:220px;object-fit:cover;">
+                </div>
+                <h4>Winter Internship - Image Processing and Computed Tomography in NDE (ISRO)</h4>
+                <button class="details-btn" onclick="toggleDetails('exp1')">Details</button>
+                <div class="project-details" id="exp1" style="display:none;">
+                    <ul>
+                        <li>Advanced research in image processing and computed tomography (CT) for non-destructive evaluation (NDE) in medical, industrial, and aerospace contexts.</li>
+                        <li>Explored X-ray physics principles, including Bremsstrahlung and characteristic radiation; evaluated reconstruction methods such as Filtered Back Projection (FBP) and Feldkamp-Davis-Kress (FDK).</li>
+                        <li>Performed image preprocessing and reconstruction of a human skull using OSCaR; generated sinograms and applied various filters (Hann, Hamming, Shepp-Logan, Ram-Lak).</li>
+                        <li>Observed rocket components, ISRO's 100th launch, and learned about solid motors and propellants in the SMPC section; interacted with scientists.</li>
+                    </ul>
+                </div>
             </div>
-
-            <!-- YouTube Video 2 -->
-            <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/zoIbHmJTV8E" 
-                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                </iframe>
-            </div>
-
-            <!-- YouTube Video 3 -->
-            <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/Z57hQ0aQZPc" 
-                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                </iframe>
-            </div>
-
-            <!-- YouTube Video 4 -->
-            <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/JBUcyYMKqCg" 
-                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                </iframe>
-            </div>
-
-            <!-- YouTube Video 5 -->
-            <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/yFqPVmEnEuU" 
-                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                </iframe>
+            <!-- Experience 2 -->
+            <div class="col-md-6 project-block">
+                <div class="project-thumb">
+                    <img src="images/iiti.png" alt="Dissertation - IDENTIFYING BARS IN GALAXIES USING MACHINE LEARNING (IIT Indore)" style="width:100%;height:220px;object-fit:cover;">
+                </div>
+                <h4>Dissertation - IDENTIFYING BARS IN GALAXIES USING MACHINE LEARNING (IIT Indore)</h4>
+                <button class="details-btn" onclick="toggleDetails('exp2')">Details</button>
+                <div class="project-details" id="exp2" style="display:none;">
+                    <ul>
+                        <li>Simulated 10,000 synthetic galaxies with exponential radial profiles and embedded bars using Python, Astropy, and Matplotlib.</li>
+                        <li>Trained a YOLO-based CNN model (TensorFlow/PyTorch) for bar detection.</li>
+                        <li>Processed dwarf galaxy data from SDSS DR18 and Elmegreen’s catalog; convolved images to low-resolution observational conditions.</li>
+                        <li>Characterized bar properties and applied the Tremaine-Weinberg (TW) method to estimate pattern speeds.</li>
+                        <li>Conducting HI follow-up studies using GMRT to analyze gas kinematics and dark matter halo correlations.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<!-- Projects Section (Merged & Collapsible Details) -->
+<div id="projects" class="background-alt">
+  <div class="section-divider"></div>
+  <h2 class="heading">Projects</h2>
+  <div class="container">
+    <div class="row">
+
+      <!-- Project 1 -->
+      <div class="col-md-6 project-block">
+        <div class="project-thumb">
+          <iframe
+            src="https://www.youtube.com/embed/soxZkV6rrfI"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            style="width:100%; height:220px;"
+          ></iframe>
+        </div>
+        <h4>Auto‑Fill Bank Account Numbers Using Python & Selenium</h4>
+        <button class="details-btn" onclick="toggleDetails('proj6')">Details</button>
+        <div class="project-details" id="proj6" style="display:none;">
+          <ul>
+            <li>
+              I’ll show you how to automate account number entry using Python’s
+              Selenium library combined with an Excel spreadsheet. Say goodbye
+              to manual data entry and streamline your workflow with just a few
+              simple steps.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="col-md-6 project-block">
+        <div class="project-thumb">
+          <iframe
+            src="https://www.youtube.com/embed/Pi1XeAIFzLs"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            style="width:100%; height:220px;"
+          ></iframe>
+        </div>
+        <h4>Simulating Helmholtz Coils with COMSOL Multiphysics</h4>
+        <button class="details-btn" onclick="toggleDetails('proj1')">Details</button>
+        <div class="project-details" id="proj1" style="display:none;">
+          <ul>
+            <li>
+              I demonstrate the simulation of Helmholtz coils using COMSOL
+              Multiphysics. Helmholtz coils are widely used to generate a
+              uniform magnetic field, and this simulation illustrates the
+              design, setup, and analysis of their magnetic field. Using
+              advanced computational techniques, I model the coils' behavior,
+              highlighting key concepts in electromagnetism and physics.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="col-md-6 project-block">
+        <div class="project-thumb">
+          <iframe
+            src="https://www.youtube.com/embed/zoIbHmJTV8E"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            style="width:100%; height:220px;"
+          ></iframe>
+        </div>
+        <h4>Simulating Electrostatic Levitation with COMSOL Multiphysics</h4>
+        <button class="details-btn" onclick="toggleDetails('proj2')">Details</button>
+        <div class="project-details" id="proj2" style="display:none;">
+          <ul>
+            <li>
+              I explore the fascinating concept of electrostatic levitation
+              through simulation using COMSOL Multiphysics. Electrostatic
+              levitation is the process of using electric fields to lift and
+              suspend objects without physical contact, demonstrating key
+              principles of electrostatics and engineering.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="col-md-6 project-block">
+        <div class="project-thumb">
+          <iframe
+            src="https://www.youtube.com/embed/Z57hQ0aQZPc"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            style="width:100%; height:220px;"
+          ></iframe>
+        </div>
+        <h4>Simulating the Horse Hue Magnet with COMSOL Multiphysics</h4>
+        <button class="details-btn" onclick="toggleDetails('proj3')">Details</button>
+        <div class="project-details" id="proj3" style="display:none;">
+          <ul>
+            <li>
+              I simulate the behavior of a Horse Hue Magnet using COMSOL
+              Multiphysics, showcasing the magnetic field generated by this
+              unique configuration. Through the use of computational tools,
+              this video explains the design, magnetic field visualization,
+              and practical applications of the Horse Hue Magnet.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Project 5 -->
+      <div class="col-md-6 project-block">
+        <div class="project-thumb">
+          <iframe
+            src="https://www.youtube.com/embed/JBUcyYMKqCg"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            style="width:100%; height:220px;"
+          ></iframe>
+        </div>
+        <h4>Simulating Magnetic Hysteresis with COMSOL Multiphysics</h4>
+        <button class="details-btn" onclick="toggleDetails('proj4')">Details</button>
+        <div class="project-details" id="proj4" style="display:none;">
+          <ul>
+            <li>
+              I simulate the magnetic hysteresis phenomenon using COMSOL
+              Multiphysics. Magnetic hysteresis refers to the lag between the
+              magnetic field applied to a material and the magnetization
+              response. This simulation demonstrates how magnetic materials
+              react under varying magnetic fields, providing an in‑depth
+              visualization of the hysteresis loop and its importance in
+              physics and engineering.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Project 6 -->
+      <div class="col-md-6 project-block">
+        <div class="project-thumb">
+          <iframe
+            src="https://www.youtube.com/embed/yFqPVmEnEuU"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            style="width:100%; height:220px;"
+          ></iframe>
+        </div>
+        <h4>Simulating Electromagnetic Induction & Heating with COMSOL Multiphysics</h4>
+        <button class="details-btn" onclick="toggleDetails('proj5')">Details</button>
+        <div class="project-details" id="proj5" style="display:none;">
+          <ul>
+            <li>
+              I simulate the concept of electromagnetic induction along with
+              heating effects using COMSOL Multiphysics. This simulation not
+              only demonstrates how a changing magnetic field induces current
+              in a conductor, but also highlights the thermal effects due to
+              resistive heating. The coils and magnetic field interactions are
+              modeled to show both the induction of current and the resulting
+              heating of the material.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  function toggleDetails(id) {
+    const el = document.getElementById(id);
+    el.style.display = el.style.display === 'none' ? 'block' : 'none';
+  }
+</script>
+
+<style>
+  .project-block {
+    margin-bottom: 40px;
+    text-align: left;
+  }
+  .project-thumb {
+    margin-bottom: 12px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px #FFD70033;
+  }
+  .details-btn {
+    display: inline-block;
+    background: linear-gradient(90deg, #FFD700 0%, #00fff7 100%);
+    color: #222;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 8px #FFD70033;
+  }
+  .details-btn:hover {
+    background: linear-gradient(90deg, #00fff7 0%, #FFD700 100%);
+    box-shadow: 0 0 18px #FFD70099;
+  }
+  .project-details {
+    background: #fffbe9;
+    border-radius: 8px;
+    margin-top: 8px;
+    padding: 12px 18px;
+    box-shadow: 0 1px 8px #FFD70022;
+    font-size: 16px;
+    text-align: left;
+  }
+</style>
+
+    
 <!-- Gallery Section -->
 <div id="gallery">
-    <h2 class="heading">Gallery</h2>
+    <h2 class="heading" style="text-align: center; width: 100%;">Gallery</h2>
         <!-- Gallery Image 1 -->
         <div class="carousel-slide">
             <img src="images/gallery1.jpg" alt="Gallery Image 1" style="max-width: 400px; height: auto; margin: auto;">
@@ -185,11 +389,7 @@
             <p class="caption">Chasing the Cosmos at Dusk</p>
         </div>
 
-        <!-- Gallery Image 4 -->
-        <div class="carousel-slide">
-            <img src="images/gallery4.jpg" alt="Gallery Image 4" style="max-width: 400px; height: auto; margin: auto;">
-            <p class="caption">Ready for a Night of Stargazing</p>
-        </div>
+    
 
         <!-- Gallery Image 5 -->
         <div class="carousel-slide">
@@ -201,30 +401,6 @@
         <div class="carousel-slide">
             <img src="images/gallery6.jpg" alt="Gallery Image 6" style="max-width: 400px; height: auto; margin: auto;">
             <p class="caption">Night at MANIT Bhopal</p>
-        </div>
-
-        <!-- Gallery Image 7 -->
-        <div class="carousel-slide">
-            <img src="images/gallery7.jpg" alt="Gallery Image 7" style="max-width: 400px; height: auto; margin: auto;">
-            <p class="caption">A Study Break View</p>
-        </div>
-
-        <!-- Gallery Image 8 -->
-        <div class="carousel-slide">
-            <img src="images/gallery8.jpg" alt="Gallery Image 8" style="max-width: 400px; height: auto; margin: auto;">
-            <p class="caption">Majestic Raja Bhoj</p>
-        </div>
-
-        <!-- Gallery Image 9 -->
-        <div class="carousel-slide">
-            <img src="images/gallery9.jpg" alt="Gallery Image 9" style="max-width: 400px; height: auto; margin: auto;">
-            <p class="caption">Temple at Sunset</p>
-        </div>
-
-        <!-- Gallery Image 10 -->
-        <div class="carousel-slide">
-            <img src="images/gallery10.jpg" alt="Gallery Image 10" style="max-width: 400px; height: auto; margin: auto;">
-            <p class="caption">Kashi temple BHU</p>
         </div>
 
         <!-- Gallery Image 11 -->
@@ -269,6 +445,59 @@
             <img src="images/gallery22.jpg" alt="Gallery Image 22" style="max-width: 400px; height: auto; margin: auto;">
             <p class="caption">Peace </p>
         </div>
+        <div class="carousel-slide">
+            <img src="images/gallery23.jpg" alt="Gallery Image 22" style="max-width: 400px; height: auto; margin: auto;">
+            <p class="caption">Talking to woods </p>
+        </div>
+        <div class="carousel-slide">
+            <img src="images/gallery24.jpg" alt="Gallery Image 22" style="max-width: 400px; height: auto; margin: auto;">
+            <p class="caption">My personal telescope </p>
+        </div>
+        <div class="carousel-slide">
+            <img src="images/gallery25.jpg" alt="Gallery Image 22" style="max-width: 400px; height: auto; margin: auto;">
+            <p class="caption">IIT Indore </p>
+        </div>
+        <div class="carousel-slide">
+            <img src="images/gallery26.png" alt="Gallery Image 22" style="max-width: 400px; height: auto; margin: auto;">
+            <p class="caption">100th Launch of ISRO(GSLV F15) </p>
+        </div>
+        
+        <div class="carousel-slide">
+            <img src="images/gallery28.jpg" alt="Gallery Image 22" style="max-width: 400px; height: auto; margin: auto;">
+            <p class="caption"> Rocket in the air </p>
+        </div>
+        <div class="carousel-slide">
+            <img src="images/gallery29.jpg" alt="Gallery Image 22" style="max-width: 400px; height: auto; margin: auto;">
+            <p class="caption"> Clouds left by rocket </p>
+        </div>
+        <div class="carousel-slide">
+            <img src="images/gallery32.jpg" alt="Gallery Image 22" style="max-width: 400px; height: auto; margin: auto;">
+            <p class="caption">IIT indore from top </p>
+        </div>
+        <div class="carousel-slide">
+            <img src="images/gallery33.jpg" alt="Gallery Image 22" style="max-width: 400px; height: auto; margin: auto;">
+            <p class="caption"> Buildings connecting in air </p>
+        </div>
+        <div class="carousel-slide">
+            <img src="images/gallery34.jpg" alt="Gallery Image 22" style="max-width: 400px; height: auto; margin: auto;">
+            <p class="caption">100 th launch</p>
+        </div>
+        <div class="carousel-slide">
+            <img src="images/gallery35.jpg" alt="Gallery Image 22" style="max-width: 400px; height: auto; margin: auto;">
+            <p class="caption">Summer school at IIST, Trivandrum </p>
+        </div>
+        <div class="carousel-slide">
+            <img src="images/gallery36.jpg" alt="Gallery Image 22" style="max-width: 400px; height: auto; margin: auto;">
+            <p class="caption">ISRO launching site gate </p>
+        </div>
+        <div class="carousel-slide">
+            <img src="images/gallery37.jpg" alt="Gallery Image 22" style="max-width: 400px; height: auto; margin: auto;">
+            <p class="caption">Control room of ISRO </p>
+        </div>
+         <div class="carousel-slide">
+            <img src="images/gallery38.jpg" alt="Gallery Image 22" style="max-width: 400px; height: auto; margin: auto;">
+            <p class="caption">Summer school at IIST  </p>
+        </div>
 
         <!-- Gallery navigation arrows -->
         <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
@@ -308,25 +537,34 @@
         cursor: pointer;
         position: absolute;
         top: 50%;
-        width: auto;
-        padding: 16px;
-        color: #000000; /* Change to white for better visibility */
-        background-color: rgba(0, 0, 0, 0.7); /* Background for better contrast */
+        width: 56px;
+        height: 56px;
+        padding: 0;
+        color: #FFD700;
+        background: rgba(34, 34, 34, 0.85);
         font-weight: bold;
-        font-size: 24px;
-        transition: 0.6s ease;
-        user-select: none;
+        font-size: 38px;
+        line-height: 56px;
+        text-align: center;
         border-radius: 50%;
+        box-shadow: 0 0 18px #FFD70099, 0 2px 12px #2225;
+        border: 2px solid #FFD700;
+        z-index: 10;
+        transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.2s;
+        user-select: none;
+        transform: translateY(-50%);
     }
     .prev {
-        left: 10px; /* Adjusted position to avoid overlap */
+        left: 10px;
     }
     .next {
-        right: 10px; /* Adjusted position to avoid overlap */
+        right: 10px;
     }
     .prev:hover, .next:hover {
-        background-color: rgba(0, 0, 0, 0.5); /* Highlight effect on hover */
-        color: #050505; /* Change text color on hover for visibility */
+        background: #FFD700;
+        color: #222;
+        box-shadow: 0 0 32px #FFD700cc, 0 2px 18px #2228;
+        transform: scale(1.12) translateY(-50%);
     }
 </style>
 
@@ -370,30 +608,42 @@
         cursor: pointer;
         position: absolute;
         top: 50%;
-        width: auto;
-        padding: 16px;
-        color: #000000; /* Changed to white for better visibility */
+        width: 56px;
+        height: 56px;
+        padding: 0;
+        color: #FFD700;
+        background: rgba(34, 34, 34, 0.85);
         font-weight: bold;
-        font-size: 24px;
-        transition: 0.6s ease;
+        font-size: 38px;
+        line-height: 56px;
+        text-align: center;
+        border-radius: 50%;
+        box-shadow: 0 0 18px #FFD70099, 0 2px 12px #2225;
+        border: 2px solid #FFD700;
+        z-index: 10;
+        transition: background 0.3s, color 0.3s, box-shadow 0.3s, transform 0.2s;
         user-select: none;
-        background-color: rgba(0, 0, 0, 0.6); /* Added background for visibility */
+        transform: translateY(-50%);
     }
     .prev {
-        left: 0;
+        left: 10px;
     }
     .next {
-        right: 0;
+        right: 10px;
     }
     .prev:hover, .next:hover {
-        background-color: rgba(0, 0, 0, 0.8);
+        background: #FFD700;
+        color: #222;
+        box-shadow: 0 0 32px #FFD700cc, 0 2px 18px #2228;
+        transform: scale(1.12) translateY(-50%);
     }
 </style>
 
 
 
     <!-- Workshops & Summer Schools Section -->
-    <div id="workshops" class="background-alt">
+    <div id="workshops">
+        <div class="section-divider"></div>
         <h2 class="heading">Workshops & Summer Schools</h2>
         <div id="workshops-timeline">
             <div class="workshops-block" data-date="July 2024">
@@ -474,30 +724,184 @@
         </div>
     </div>
 
+<!-- Certifications Section (Merged & Collapsible Details) -->
+<div id="certifications" class="background-alt">
+  <div class="section-divider"></div>
+  <h2 class="heading text-center" style="text-align: center;">Certifications</h2>
+  <div class="container">
+    <div class="row">
+
+      <!-- Certification 1 -->
+      <div class="col-md-6 cert-block">
+        <div class="cert-thumb">
+          <!-- replace IMAGE_URL_1 with your image link -->
+          <img src="images/xxf.jpg" alt="Scientific Computing using Python" style="width:100%; height:220px; object-fit:cover; border-radius:12px; box-shadow:0 2px 12px #FFD70033;">
+        </div>
+        <h4>Scientific Computing using Python</h4>
+        <p><strong>IIT Kanpur</strong>, November 2024</p>
+        <button class="details-btn" onclick="toggleDetails('cert1')">Details</button>
+        <div class="cert-details" id="cert1" style="display:none;">
+          <ul>
+            <li>Numerical methods (interpolation, integration, differentiation), ODE/PDE solvers, linear algebra, Monte Carlo.</li>
+            <li>Data I/O, plotting, error analysis, Fourier/spectral transforms, solver implementation for real-world physics problems.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Certification 2 -->
+      <div class="col-md-6 cert-block">
+        <div class="cert-thumb">
+          <!-- replace IMAGE_URL_2 with your image link -->
+          <img src="images/philo.jpg" alt="Philosophy and Critical Thinking" style="width:100%; height:220px; object-fit:cover; border-radius:12px; box-shadow:0 2px 12px #FFD70033;">
+        </div>
+        <h4>Philosophy and Critical Thinking</h4>
+        <p><strong>IIT Dhanbad</strong>, May 2025</p>
+        <button class="details-btn" onclick="toggleDetails('cert2')">Details</button>
+        <div class="cert-details" id="cert2" style="display:none;">
+          <ul>
+            <li>Comprehensive intro to Western philosophy: from Pre-Socratic thinkers to Kant—self, metaphysics, ethics, rationalism/empiricism.</li>
+            <li>Critical analyses of Descartes, Locke, Hume, Mill, Kant.</li>
+            <li>Comparative study of Indian/Eastern philosophies: Vedas & Upanishads, Buddhism, Jainism.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Certification 3 -->
+      <div class="col-md-6 cert-block">
+        <div class="cert-thumb">
+          <!-- replace IMAGE_URL_3 with your image link -->
+          <img src="images/ente.jpg" alt="People Management for Entrepreneurs" style="width:100%; height:220px; object-fit:cover; border-radius:12px; box-shadow:0 2px 12px #FFD70033;">
+        </div>
+        <h4>People Management for Entrepreneurs</h4>
+        <p><strong>IIM Bangalore</strong>, June 2025</p>
+        <button class="details-btn" onclick="toggleDetails('cert3')">Details</button>
+        <div class="cert-details" id="cert3" style="display:none;">
+          <ul>
+            <li>Founder mindset, scaling and growth strategies, organizational design, talent acquisition, performance culture, succession planning.</li>
+            <li>Developed skills in strategic decision-making, team structuring, high-performance coaching, frameworks for succession and exit.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Certification 4 -->
+      <div class="col-md-6 cert-block">
+        <div class="cert-thumb">
+          <!-- replace IMAGE_URL_4 with your image link -->
+          <img src="images/rocket.jpg" alt="Rocket Dynamics" style="width:100%; height:220px; object-fit:cover; border-radius:12px; box-shadow:0 2px 12px #FFD70033;">
+        </div>
+        <h4>Rocket Dynamics</h4>
+        <p><strong>Maulana Azad National Institute of Technology</strong>, December 2024</p>
+        <button class="details-btn" onclick="toggleDetails('cert4')">Details</button>
+        <div class="cert-details" id="cert4" style="display:none;">
+          <ul>
+            <li>🚀 Rocket Propulsion & Flight Dynamics – Understanding thrust, drag, and stability in motion.</li>
+            <li>🔥 Different Types of Rocket Engines – From solid and liquid to hybrid and ion propulsion.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Certification 5 -->
+      <div class="col-md-6 cert-block">
+        <div class="cert-thumb">
+          <!-- replace IMAGE_URL_5 with your image link -->
+          <img src="images/brics.jpg" alt="Science Communication and Media Relations" style="width:100%; height:220px; object-fit:cover; border-radius:12px; box-shadow:0 2px 12px #FFD70033;">
+        </div>
+        <h4>The Importance of Science Communication and Media Relations</h4>
+        <p><strong>BRICS Astronomy</strong>, April 2025</p>
+        <button class="details-btn" onclick="toggleDetails('cert5')">Details</button>
+        <div class="cert-details" id="cert5" style="display:none;">
+          <ul>
+            <li>Awarded for active participation in a focused training programme aimed at enhancing science communication and media engagement skills.</li>
+            <li>The session emphasized the importance of effectively conveying scientific concepts to diverse audiences and fostering public understanding of science.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 
-    <!-- Skills Section -->
-    <div id="skills">
+    <!-- Skills Section (Merged and Categorized) -->
+    <div id="skills" class="background-alt">
+        <div class="section-divider"></div>
         <h2 class="heading">Skills</h2>
-        <ul>
-            <li>Python</li>
-            <li>MATLAB</li>
-            <li>Matplotlib</li>
-            <li>NumPy</li>
-            <li>Aladin Sky Atlas</li>
-            <li>VIREO</li>
-            <li>COMSOL</li>
-            <li>ANSYS</li>
-            <li>Word</li>
-            <li>LaTeX</li>
-            <li>Excel</li>
-            <li>C++(basic)</li>
-            <li>HTML(basic)</li>
-            <li>DS9</li>
-        </ul>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Programming & Libraries</h4>
+                    <ul>
+                        <li>Python (NumPy, Matplotlib, Scipy, Astropy, Photutils, Selenium)</li>
+                        <li>C++ (Basic), BlueJ, MATLAB, HTML (Basic)</li>
+                    </ul>
+                    <h4>ML/AI & Image Processing</h4>
+                    <ul>
+                        <li>CNNs, Data Augmentation, SDSS Data Retrieval, TW Method</li>
+                        <li>Tomographic Reconstruction (FBP, FDK), Sinogram Generation</li>
+                        <li>Filter Design (Hann, Hamming, Ram-Lak, Shepp-Logan), NDE</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h4>Software & Tools</h4>
+                    <ul>
+                        <li>Aladin Sky Atlas, VIREO, DS9, COMSOL, ANSYS, OSCaR, Origin</li>
+                        <li>TensorFlow, PyTorch, YOLO</li>
+                    </ul>
+                    <h4>Instrumentation & Other</h4>
+                    <ul>
+                        <li>Manual Telescopes, LINAC (X-ray), X-Ray Diffractometer, UV-Vis Spectrophotometer</li>
+                        <li>Operating Systems: Windows, Linux</li>
+                        <li>Documentation: LaTeX, Word, Excel</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 
-    
+  
+
+
+<script>
+  function toggleDetails(id) {
+    const el = document.getElementById(id);
+    el.style.display = el.style.display === 'none' ? 'block' : 'none';
+  }
+</script>
+
+<style>
+  .cert-block {
+    margin-bottom: 40px;
+  }
+  .cert-thumb {
+    margin-bottom: 12px;
+  }
+  .details-btn {
+    background: linear-gradient(90deg, #FFD700 0%, #00fff7 100%);
+    color: #222;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 8px #FFD70033;
+  }
+  .details-btn:hover {
+    background: linear-gradient(90deg, #00fff7 0%, #FFD700 100%);
+    box-shadow: 0 0 18px #FFD70099;
+  }
+  .cert-details {
+    background: #fffbe9;
+    border-radius: 8px;
+    margin-top: 8px;
+    padding: 12px 18px;
+    box-shadow: 0 1px 8px #FFD70022;
+    font-size: 16px;
+    text-align: left;
+  }
+</style>
+
 
     <footer>
         <div id="yoyo">
@@ -544,6 +948,794 @@
                 });
             });
         });
+
+        // Title change on hover for main name
+        const mainTitle = document.getElementById('main-title');
+        const originalTitle = document.title;
+        mainTitle.addEventListener('mouseenter', function() {
+            document.title = "Welcome to Rajit Shrivastava's Portfolio!";
+        });
+        mainTitle.addEventListener('mouseleave', function() {
+            document.title = originalTitle;
+        });
+
+        // Animate main title on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            var mainTitle = document.getElementById('main-title');
+            if (mainTitle) {
+                mainTitle.classList.add('animated');
+            }
+        });
+    </script>
+
+    <!-- Styles for main title hover effect -->
+    <style>
+        #main-title {
+    opacity: 1;
+    transform: none;
+    color: #fff;
+    transition: opacity 1s cubic-bezier(0.4,0,0.2,1), transform 1s cubic-bezier(0.4,0,0.2,1), color 0.3s, text-shadow 0.3s;
+    cursor: pointer;
+    z-index: 10;
+}
+#main-title.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+#main-title.js-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+#main-title:hover {
+    color: #FFD700;
+    text-shadow: 0 0 10px #222, 0 0 20px #FFD700;
+}
+    </style>
+
+    <style>
+#lead {
+    position: relative;
+}
+#bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+#lead-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.45); /* Subtle dark overlay */
+    z-index: 2;
+}
+#lead-content {
+    position: relative;
+    z-index: 3;
+}
+#main-title {
+    opacity: 1;
+    transform: none;
+    color: #fff;
+    transition: opacity 1s cubic-bezier(0.4,0,0.2,1), transform 1s cubic-bezier(0.4,0,0.2,1), color 0.3s, text-shadow 0.3s;
+    cursor: pointer;
+    z-index: 10;
+}
+#main-title.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+#main-title.js-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+#main-title:hover {
+    color: #FFD700;
+    text-shadow: 0 0 10px #222, 0 0 20px #FFD700;
+}
+</style>
+
+<style>
+#menu li a {
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 10px 18px;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+#menu li a:hover, #menu li a:focus {
+    background: #FFD700;
+    color: #222;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    text-decoration: none;
+}
+</style>
+
+<!-- Styles for body and headings -->
+<style>
+body {
+    font-family: 'Lato', Arial, sans-serif;
+}
+h1, h2, h3, h4, .heading {
+    font-family: 'Montserrat', Arial, sans-serif;
+    letter-spacing: 1px;
+    text-align: center;
+}
+</style>
+
+<style>
+section, .background-alt, #about, #education, #projects, #gallery, #workshops, #skills {
+    padding: 60px 0 40px 0;
+    position: relative;
+}
+.background-alt {
+    background: #f7f7f7;
+}
+.section-divider {
+    width: 80px;
+    height: 4px;
+    background: #FFD700;
+    margin: 32px auto 40px auto;
+    border-radius: 2px;
+}
+</style>
+
+<style>
+.gallery-swiper {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+    padding-bottom: 40px;
+    overflow: visible;
+}
+.gallery-swiper .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    opacity: 0.7;
+    transition: opacity 0.3s, transform 0.3s;
+}
+.gallery-swiper .swiper-slide.swiper-slide-active {
+    opacity: 1;
+    transform: scale(1.05);
+    z-index: 2;
+}
+.gallery-swiper img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 0;
+    margin: auto;
+}
+.gallery-swiper .caption {
+    color: #000000;
+    font-size: 18px;
+    padding: 8px 12px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0;
+    margin-top: 0;
+}
+.swiper-button-next, .swiper-button-prev {
+    color: #FFD700;
+}
+.swiper-pagination-bullet-active {
+    background: #FFD700;
+}
+</style>
+
+<style>
+#header-social.social-icons {
+    list-style: none;
+    display: flex;
+    gap: 12px;
+    position: absolute;
+    right: 32px;
+    top: 24px;
+    z-index: 20;
+    margin: 0;
+    padding: 0;
+}
+#header-social.social-icons li {
+    display: inline-block;
+}
+#header-social.social-icons a {
+    color: #fff;
+    font-size: 20px;
+    transition: color 0.3s;
+    padding: 6px;
+    border-radius: 50%;
+    background: rgba(34,34,34,0.15);
+}
+#header-social.social-icons a:hover {
+    color: #FFD700;
+    background: rgba(34,34,34,0.35);
+}
+@media (max-width: 900px) {
+    #header-social.social-icons {
+        right: 12px;
+        top: 16px;
+        gap: 8px;
+    }
+    #menu.shadow {
+        font-size: 15px;
+        padding: 0 4px;
+    }
+}
+@media (max-width: 600px) {
+    #header-social.social-icons {
+        position: static;
+        justify-content: center;
+        margin: 12px 0 0 0;
+        padding: 0;
+        gap: 10px;
+    }
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #menu.shadow {
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 14px;
+        padding: 0 2px;
+    }
+}
+</style>
+
+<style>
+@media (max-width: 900px) {
+    #lead-content h1#main-title {
+        font-size: 2.2rem;
+    }
+    .heading {
+        font-size: 1.5rem;
+    }
+}
+@media (max-width: 600px) {
+    #lead-content h1#main-title {
+        font-size: 1.3rem;
+        padding: 0 8px;
+    }
+    .heading {
+        font-size: 1.1rem;
+    }
+    .container, .row, .col-md-4, .col-md-8 {
+        padding: 0 4px !important;
+        margin: 0 !important;
+    }
+    #lead {
+        min-height: 220px;
+    }
+    .gallery-swiper img, .carousel-slide img {
+        max-width: 98vw;
+    }
+}
+</style>
+
+<style>
+/* Mobile menu overlay styles */
+#main-nav {
+    position: relative;
+}
+#mobile-menu-open {
+    display: none;
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    z-index: 1001;
+    background: #222;
+    color: #FFD700;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 28px;
+    cursor: pointer;
+}
+#mobile-menu-close {
+    display: none;
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    z-index: 1002;
+    background: #222;
+    color: #FFD700;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 22px;
+    cursor: pointer;
+}
+@media (max-width: 900px) {
+    #mobile-menu-open {
+        display: block;
+        right: 8px;
+        top: 8px;
+        margin: 0;
+        padding: 8px 12px;
+        z-index: 2000;
+    }
+    header {
+        position: static;
+    }
+    #main-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(34,34,34,0.98);
+        z-index: 1000;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 60px;
+    }
+    #main-nav.open {
+        display: flex;
+    }
+    #mobile-menu-close {
+        display: block;
+    }
+    #menu.shadow {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background: none;
+        box-shadow: none;
+        font-size: 1.2rem;
+        margin: 0;
+        padding: 0;
+    }
+    #menu.shadow li {
+        margin: 18px 0;
+    }
+    #header-social.social-icons {
+        flex-direction: row;
+        justify-content: center;
+        position: static;
+        margin: 24px 0 0 0;
+        gap: 18px;
+    }
+}
+</style>
+<script>
+// Mobile menu open/close logic
+const mobileMenuOpen = document.getElementById('mobile-menu-open');
+const mainNav = document.getElementById('main-nav');
+const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+mobileMenuOpen && mobileMenuOpen.addEventListener('click', function() {
+    mainNav.classList.add('open');
+    document.body.style.overflow = 'hidden';
+});
+mobileMenuClose && mobileMenuClose.addEventListener('click', function() {
+    mainNav.classList.remove('open');
+    document.body.style.overflow = '';
+});
+// Close menu when a link is clicked (for better UX)
+document.querySelectorAll('#menu a').forEach(link => {
+    link.addEventListener('click', function() {
+        if (window.innerWidth <= 900) {
+            mainNav.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+    });
+});
+</script>
+
+<!-- Back to Top Button -->
+<button id="back-to-top" title="Back to top"><i class="fa fa-arrow-up"></i></button>
+
+<script>
+// Hamburger icon animation
+mobileMenuOpen && mobileMenuOpen.addEventListener('click', function() {
+    mobileMenuOpen.classList.add('open');
+});
+mobileMenuClose && mobileMenuClose.addEventListener('click', function() {
+    mobileMenuOpen.classList.remove('open');
+});
+// Section fade-in on scroll
+function revealSections() {
+    document.querySelectorAll('.section-fade').forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 80) {
+            section.classList.add('visible');
+        }
+    });
+}
+document.addEventListener('scroll', revealSections);
+document.addEventListener('DOMContentLoaded', function() {
+    revealSections();
+    // Add .section-fade to main sections
+    ['about','education','projects','gallery','workshops','skills'].forEach(id => {
+        var el = document.getElementById(id);
+        if (el) el.classList.add('section-fade');
+    });
+});
+// Back to Top Button
+const backToTop = document.getElementById('back-to-top');
+window.addEventListener('scroll', function() {
+    if (window.scrollY > 300) {
+        backToTop.style.display = 'block';
+    } else {
+        backToTop.style.display = 'none';
+    }
+});
+backToTop && backToTop.addEventListener('click', function() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+});
+</script>
+
+<style>
+/* Animated Hamburger Icon */
+#mobile-menu-open {
+    transition: background 0.3s, color 0.3s;
+}
+#mobile-menu-open.open {
+    background: #FFD700;
+    color: #222;
+}
+#mobile-menu-open .fa-bars {
+    transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+#mobile-menu-open.open .fa-bars {
+    transform: rotate(90deg) scale(1.2);
+}
+
+/* Social Icons Hover Animation */
+#header-social.social-icons a {
+    transition: color 0.3s, background 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+#header-social.social-icons a:hover {
+    color: #FFD700;
+    background: rgba(34,34,34,0.35);
+    transform: scale(1.18) rotate(-8deg);
+    box-shadow: 0 0 12px #FFD70099;
+}
+
+/* Section Fade-In Animation */
+.section-fade {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.4,0,0.2,1), transform 0.8s cubic-bezier(0.4,0,0.2,1);
+}
+.section-fade.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Gallery Image Hover Zoom */
+.carousel-slide img, .gallery-swiper img {
+    transition: transform 0.4s cubic-bezier(0.4,0,0.2,1), box-shadow 0.4s;
+}
+.carousel-slide img:hover, .gallery-swiper img:hover {
+    transform: scale(1.07) rotate(-2deg);
+    box-shadow: 0 0 18px #FFD70099;
+    z-index: 2;
+}
+
+/* Back to Top Button */
+#back-to-top {
+    display: none;
+    position: fixed;
+    bottom: 32px;
+    right: 18px;
+    z-index: 3000;
+    background: #FFD700;
+    color: #222;
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    font-size: 22px;
+    box-shadow: 0 2px 12px #2225;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+#back-to-top:hover {
+    background: #222;
+    color: #FFD700;
+    transform: scale(1.12);
+}
+</style>
+
+<!-- Background Music -->
+<audio id="bg-music" src="audio/song.mp3" autoplay loop></audio>
+<button id="music-toggle" title="Play/Pause Music"><i class="fa fa-pause"></i></button>
+<div id="music-overlay">
+  <div class="music-overlay-content">
+    <i class="fa fa-music"></i>
+    <span>Click anywhere to enable music</span>
+  </div>
+</div>
+<style>
+#music-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(34,34,34,0.92);
+  z-index: 4000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: opacity 0.5s;
+}
+.music-overlay-content {
+  color: #FFD700;
+  font-size: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+.music-overlay-content i {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+  animation: music-bounce 1.2s infinite alternate;
+}
+@keyframes music-bounce {
+  0% { transform: scale(1) rotate(-8deg); }
+  100% { transform: scale(1.15) rotate(8deg); }
+}
+#music-overlay.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+</style>
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+    var audio = document.getElementById('bg-music');
+    var btn = document.getElementById('music-toggle');
+    var icon = btn.querySelector('i');
+    var overlay = document.getElementById('music-overlay');
+    var overlayDismissed = false;
+    if (audio) {
+        audio.volume = 0.5;
+        // Try to play immediately (may fail)
+        audio.play().catch(function(){});
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (audio.paused) {
+                audio.play();
+                icon.className = 'fa fa-pause';
+            } else {
+                audio.pause();
+                icon.className = 'fa fa-play';
+            }
+        });
+        audio.addEventListener('play', function() { icon.className = 'fa fa-pause'; });
+        audio.addEventListener('pause', function() { icon.className = 'fa fa-play'; });
+    }
+    // Overlay click to enable music
+    function enableMusic() {
+        if (overlayDismissed) return;
+        overlayDismissed = true;
+        overlay.classList.add('hide');
+        if (audio && audio.paused) {
+            audio.play().catch(function(){});
+        }
+    }
+    overlay && overlay.addEventListener('click', enableMusic);
+    document.body.addEventListener('click', enableMusic, { once: true });
+    document.body.addEventListener('keydown', enableMusic, { once: true });
+});
+</script>
+
+<style>
+/* --- 1. Holographic Card Effect for Gallery Images --- */
+.carousel-slide img, .gallery-swiper img {
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(135deg, #fff 0%, #e0e0e0 100%);
+    border-radius: 18px;
+    box-shadow: 0 4px 32px #FFD70033, 0 1.5px 8px #2222;
+    overflow: hidden;
+    transition: box-shadow 0.4s, transform 0.4s, filter 0.4s;
+}
+.carousel-slide img:hover, .gallery-swiper img:hover {
+    box-shadow: 0 0 32px #FFD700cc, 0 2px 18px #2228, 0 0 80px #00fff7cc;
+    filter: brightness(1.08) saturate(1.2) drop-shadow(0 0 16px #00fff7cc);
+    background: linear-gradient(120deg, #FFD700 0%, #00fff7 100%);
+    animation: holo-glow 1.2s linear infinite alternate;
+}
+@keyframes holo-glow {
+    0% { filter: brightness(1.08) saturate(1.2) drop-shadow(0 0 16px #00fff7cc); }
+    100% { filter: brightness(1.18) saturate(1.4) drop-shadow(0 0 32px #FFD700cc); }
+}
+
+/* --- 2. Fancy Underline for Menu Links --- */
+#menu li a {
+    position: relative;
+    overflow: hidden;
+}
+#menu li a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 6px;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #FFD700 0%, #00fff7 100%);
+    border-radius: 2px;
+    transition: width 0.35s cubic-bezier(0.4,0,0.2,1), left 0.35s cubic-bezier(0.4,0,0.2,1);
+    z-index: 2;
+}
+#menu li a:hover::after, #menu li a:focus::after {
+    width: 80%;
+    left: 10%;
+}
+
+/* --- 3. Liquid Morph Social Icon Effect --- */
+#header-social.social-icons a, .col-sm-5.social a {
+    position: relative;
+    overflow: hidden;
+    background: rgba(34,34,34,0.15);
+    border-radius: 50%;
+    transition: background 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+#header-social.social-icons a::before, .col-sm-5.social a::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 120%; height: 120%;
+    background: radial-gradient(circle at 60% 40%, #FFD70088 0%, #00fff788 100%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0.7);
+    opacity: 0;
+    transition: opacity 0.4s, transform 0.4s;
+    z-index: 0;
+    pointer-events: none;
+}
+#header-social.social-icons a:hover::before, .col-sm-5.social a:hover::before {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+#header-social.social-icons a:hover, .col-sm-5.social a:hover {
+    color: #FFD700;
+    background: rgba(34,34,34,0.35);
+    transform: scale(1.18) rotate(-8deg);
+    box-shadow: 0 0 12px #FFD70099;
+}
+#header-social.social-icons a i, .col-sm-5.social a i {
+    position: relative;
+    z-index: 1;
+}
+
+/* --- 4. Shiny Button Effect for Buttons --- */
+#music-toggle, #back-to-top {
+    position: fixed;
+    right: 18px;
+    z-index: 3000;
+    background: linear-gradient(90deg, #FFD700 0%, #00fff7 100%);
+    color: #222;
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    font-size: 22px;
+    box-shadow: 0 2px 12px #2225;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+}
+#music-toggle {
+    bottom: 90px;
+}
+#back-to-top {
+    bottom: 32px;
+}
+#music-toggle::after, #back-to-top::after {
+    content: '';
+    position: absolute;
+    top: -60%; left: -60%;
+    width: 220%; height: 220%;
+    background: linear-gradient(120deg, #fff8 0%, #FFD70088 50%, #00fff788 100%);
+    opacity: 0.25;
+    transform: rotate(25deg);
+    pointer-events: none;
+    transition: opacity 0.4s;
+}
+#music-toggle:hover, #back-to-top:hover {
+    background: linear-gradient(90deg, #00fff7 0%, #FFD700 100%);
+    color: #222;
+    transform: scale(1.12);
+    box-shadow: 0 0 32px #FFD700cc, 0 2px 18px #2228;
+}
+#music-toggle:hover::after, #back-to-top:hover::after {
+    opacity: 0.5;
+}
+</style>
+<!-- Black Hole Button -->
+    <div id="blackhole" title="Click to activate the Black Hole!" style="position: fixed; left: 32px; bottom: 32px; width: 56px; height: 56px; border-radius: 50%; background: #000; box-shadow: 0 0 20px 4px #000, 0 0 0 0 #fff; z-index: 9999; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: box-shadow 1s, transform 0.5s; overflow: visible; border: 2px solid #fff3;">
+        <img src="images/Blackhole.png" alt="Black Hole" style="width: 38px; height: 38px; border-radius: 50%; pointer-events: none; object-fit: cover; box-shadow: 0 0 12px 2px #000a;" />
+        <div id="blackhole-label" style="position: absolute; left: 120%; bottom: 6px; background: rgba(0,0,0,0.85); color: #fff; padding: 4px 10px; border-radius: 10px; font-size: 0.78em; font-family: 'Montserrat', sans-serif; white-space: nowrap; box-shadow: 0 2px 12px #0008; opacity: 0.92; pointer-events: none; transition: opacity 0.3s;">
+            <span style="font-weight: bold; color: #FFD700;">BLACK HOLE</span><br>
+            <span style="font-size: 0.85em; color: #fff;">Click to erase the universe!</span>
+        </div>
+    </div>
+    <style>
+    #blackhole { animation: blackhole-pulse 2s infinite alternate; }
+    @keyframes blackhole-pulse {
+        0% { box-shadow: 0 0 20px 4px #000, 0 0 0 0 #fff; }
+        100% { box-shadow: 0 0 40px 12px #222, 0 0 20px 4px #FFD70044; }
+    }
+    #blackhole:hover { transform: scale(1.08) rotate(-8deg); box-shadow: 0 0 40px 12px #111, 0 0 20px 4px #FFD70044; }
+    #blackhole-label { opacity: 1; }
+    </style>
+    <script>
+    // Black hole effect
+    const blackhole = document.getElementById('blackhole');
+    const label = document.getElementById('blackhole-label');
+    blackhole.addEventListener('mouseenter', () => { label.style.opacity = 1; });
+    blackhole.addEventListener('mouseleave', () => { label.style.opacity = 0.92; });
+    blackhole.addEventListener('click', function() {
+        // Animate sucking effect
+        const body = document.body;
+        label.style.display = 'none';
+        // Animate all children except blackhole
+        Array.from(body.children).forEach(child => {
+            if (child.id !== 'blackhole') {
+                // Animate images with swirl
+                child.querySelectorAll && child.querySelectorAll('img').forEach(img => {
+                    img.style.transition = 'all 3.2s cubic-bezier(.55,-0.01,.37,1.01)';
+                    img.style.transform = 'scale(0.1) translate(-30vw, 40vh) rotate(-1080deg)';
+                    img.style.opacity = '0';
+                    img.style.filter = 'blur(20px)';
+                });
+                // Animate text and other elements
+                child.querySelectorAll && child.querySelectorAll('*:not(img)').forEach(el => {
+                    el.style.transition = 'all 2.8s cubic-bezier(.55,-0.01,.37,1.01)';
+                    el.style.transform = 'scale(0.1) translate(-30vw, 40vh)';
+                    el.style.opacity = '0';
+                    el.style.filter = 'blur(20px)';
+                });
+                // Animate the main child
+                child.style.transition = 'all 2.8s cubic-bezier(.55,-0.01,.37,1.01)';
+                child.style.transform = 'scale(0.1) translate(-30vw, 40vh)';
+                child.style.opacity = '0';
+                child.style.filter = 'blur(20px)';
+            }
+        });
+        // Animate blackhole growing
+        setTimeout(() => {
+            blackhole.style.transition = 'all 2.2s cubic-bezier(.55,-0.01,.37,1.01)';
+            blackhole.style.transform = 'scale(30)';
+            blackhole.style.boxShadow = '0 0 0 9999px #000';
+        }, 1800);
+        // After animation, show only black screen
+        setTimeout(() => {
+            Array.from(body.children).forEach(child => {
+                if (child.id !== 'blackhole') child.style.display = 'none';
+            });
+            blackhole.style.background = '#000';
+            blackhole.style.boxShadow = 'none';
+            blackhole.style.width = '100vw';
+            blackhole.style.height = '100vh';
+            blackhole.style.left = '0';
+            blackhole.style.bottom = '0';
+            blackhole.style.right = '0';
+            blackhole.style.top = '0';
+            blackhole.style.transform = 'none';
+            blackhole.style.borderRadius = '0';
+        }, 4200);
+    });
     </script>
 
 </body>
