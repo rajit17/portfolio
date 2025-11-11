@@ -26,4 +26,5 @@ Future Updates
 I'm continuously working on adding new projects and improving the overall look and feel of the website. Stay tuned for updates!
 
 Contact
-Feel free to reach out to me through the contact information provided on the website, or connect with me via email: rajit.17shri@gmail.com.
+Feel free to reach out to me through the contact information provided on the website, or connect with me via email: rajit.17shri1@gmail.com.
+
