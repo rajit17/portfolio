@@ -273,7 +273,29 @@
         font-size: 0.93rem;
     }
 }
-/* ...existing code... */
+/* Fix: ensure Details buttons stay on top and are not floated behind thumbnails on small screens */
+@media (max-width: 600px) {
+  .details-btn {
+    float: none !important;        /* prevent left-floating which can push it under other elements */
+    display: inline-block !important;
+    margin: 12px 0 !important;
+    position: relative !important;
+    z-index: 60 !important;        /* bring button above thumbnails/iframes */
+    clear: none !important;
+  }
+
+  /* Ensure thumbnails/iframes sit below details buttons */
+  .project-thumb,
+  .cert-thumb,
+  .carousel-slide,
+  .project-thumb img,
+  .cert-thumb img,
+  .project-thumb iframe,
+  .cert-thumb iframe {
+    position: relative;
+    z-index: 1;
+  }
+}
     </style>
 </head>
 
@@ -378,7 +400,8 @@
             <div class="col-md-6 project-block">
                 <div class="project-thumb">
                     <iframe
-                        src="https://www.youtube.com/embed/HA-GR3qoySI"
+                        src="https://www.youtube.com/embed/PEQBmQQRjxQ
+"
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen
